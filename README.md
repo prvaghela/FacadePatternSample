@@ -1,10 +1,8 @@
 # FacadePatternSample
 It is simple playground file written in Swift language to demonstrate Facade Design Pattern
 
-
 Sample Code :-
-
-/* Complex parts */
+```objective-c
 class Album{
     var title: String
     var artist:  String
@@ -16,6 +14,7 @@ class Album{
         self.CoverURL = CoverURL
     }
 }
+
 class PersistencyManager {
     var albums: [Album]
     init(){
@@ -33,9 +32,8 @@ class PersistencyManager {
         albums .removeAtIndex(atIndex)
     }
 }
-/* Complex parts */
 
-/* Facade */
+
 class LibraryAPI {
     var persistencyManager: PersistencyManager
     var isOnline : Bool
@@ -59,13 +57,11 @@ class LibraryAPI {
         }
     }
 }
-/* Facade */
 
-/* Client */
 let facadeClient = LibraryAPI()
 facadeClient.addAlbum(Album(title: "Melodious", artist: "Kumar Sanu", CoverURL: "https:www.xyz.com/movie3.png"), atIndex: 2)
 var albumLists = facadeClient.getAlbums()
 for album in albumLists{
     print("Title :- \(album.artist), Artist :- \(album.title), Cover Page :- \(album.CoverURL)")
 }
-/* Client */
+```
