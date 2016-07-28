@@ -2,7 +2,7 @@
 It is simple playground file written in Swift language to demonstrate Facade Design Pattern
 
 Sample Code :-
-```objective-c
+```Swift
 class Album{
     var title: String
     var artist:  String
