@@ -3,6 +3,7 @@ It is simple playground file written in Swift language to demonstrate Facade Des
 
 Sample Code :-
 ```Swift
+/* Complex parts */
 class Album{
     var title: String
     var artist:  String
@@ -32,8 +33,9 @@ class PersistencyManager {
         albums .removeAtIndex(atIndex)
     }
 }
+/* Complex parts */
 
-
+/* Facade */
 class LibraryAPI {
     var persistencyManager: PersistencyManager
     var isOnline : Bool
@@ -57,11 +59,14 @@ class LibraryAPI {
         }
     }
 }
+/* Facade */
 
+/* Client */
 let facadeClient = LibraryAPI()
 facadeClient.addAlbum(Album(title: "Melodious", artist: "Kumar Sanu", CoverURL: "https:www.xyz.com/movie3.png"), atIndex: 2)
 var albumLists = facadeClient.getAlbums()
 for album in albumLists{
     print("Title :- \(album.artist), Artist :- \(album.title), Cover Page :- \(album.CoverURL)")
 }
+/* Client */
 ```
